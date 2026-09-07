@@ -28,6 +28,32 @@ This skill describes coding rules and instructions that you must follow. However
 - Do not split your code lines into 80 col max, 120-140 col is fine
   - When there are too many params in functions, if it exceeds the 140 col, use trailing commas and make each param consumes one line
   - Same case for when calling the function 
+- Add single blank line to indicate sections within a code
+
+Bad example:
+```python
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+```
+Good example:
+```python
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    return quicksort(left) + middle + quicksort(right)
+```
 
 ## Python-specific
 - When writing strings, 
