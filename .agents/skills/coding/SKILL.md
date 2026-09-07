@@ -65,3 +65,10 @@ def quicksort(arr):
 - Every func must have docstring following google style 
   - 1-2 lines brief explanation in the beginning, followed by args, returns, exception, etc.     
   - Don't mention the type in args explanation, the param type already explain that
+
+## Project configuration
+Utilize CLI as much as possible, do not edit project configuration and dependencies on your own unless it is necessary. 
+
+Examples:
+- Use `uv init` to instantiate project, don't write the `pyproject.toml` manually
+- Use `uv add` to add new dependencies, don't manually edit the `pyproject.toml` to add new library. You do NOT know the latest version
