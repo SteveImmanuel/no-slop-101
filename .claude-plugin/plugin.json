@@ -1,0 +1,11 @@
+{
+  "name": "no-slop-101",
+  "version": "0.1.0",
+  "description": "Shared coding and communication skills for concise, factual agent behavior.",
+  "author": {
+    "name": "Steve Immanuel"
+  },
+  "repository": "https://github.com/SteveImmanuel/no-slop-101",
+  "license": "MIT",
+  "skills": "./.agents/skills/"
+}

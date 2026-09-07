@@ -1,0 +1,23 @@
+{
+  "name": "no-slop-101",
+  "version": "0.1.0",
+  "description": "Shared coding and communication skills for concise, factual agent behavior.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveImmanuel/no-slop-101.git"
+  },
+  "keywords": [
+    "pi-package"
+  ],
+  "author": "Steve Immanuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SteveImmanuel/no-slop-101/issues"
+  },
+  "homepage": "https://github.com/SteveImmanuel/no-slop-101#readme",
+  "pi": {
+    "skills": [
+      "./.agents/skills"
+    ]
+  }
+}

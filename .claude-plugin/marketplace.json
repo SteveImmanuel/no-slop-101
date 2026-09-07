@@ -1,0 +1,14 @@
+{
+  "name": "steveimm-no-slop",
+  "description": "Coding and communication skills for agents.",
+  "owner": {
+    "name": "Steve Immanuel"
+  },
+  "plugins": [
+    {
+      "name": "no-slop-101",
+      "source": "./",
+      "description": "Shared coding and communication skills for concise, factual agent behavior."
+    }
+  ]
+}

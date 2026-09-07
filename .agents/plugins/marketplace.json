@@ -1,0 +1,20 @@
+{
+  "name": "steveimm-no-slop",
+  "interface": {
+    "displayName": "No-Slop 101"
+  },
+  "plugins": [
+    {
+      "name": "no-slop-101",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
