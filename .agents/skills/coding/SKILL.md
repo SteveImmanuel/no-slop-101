@@ -1,20 +1,41 @@
 ---
 name: coding
-description: test
+description: rules and instructions when doing coding implementations
 ---
 
+This skill describes coding rules and instructions that you must follow. However, user request in a session takes higher precedence.
 
-<temp unrefined>
+# Algorithm Design
+- Simple is always the best
+  - Pursue the most boring but robust solution
+  - When you have multiple alternatives of implementing something, default to the simplest one unless you have a good reason not to
+  - In such case, prompt the user to check first before proceeding                                                                                                            
+- As modular as needed, emphasize on needed
+  - Don't implement very specific algorithm to support just one edge case, it will break on others
+  - Group related functions into one module, otherwise split into different files
+- Never duplicate codes
+  - Before implementing something new, check if the feature already exists and reuse it
+  - If something similar but not exactly the same exists, check if it's worth to refactor the implementation to support all at once
+- Test implementation comes later during refining
+  - Initial implementation requires iteration with user which will break tests if you implement to early, wasting time
 
-i have the following coding rule implementation:                                                                                                        
-- pursue the most boring but robust solution. when you have multiple alternatives of implementing something, default to the simplest one unless you have a good reason not to. in that case, prompt the user to check first before proceeding                                                                                                            
-- as modular as needed, emphasize on needed. dont implement very specific algorithm to support just one edge case, it will break on others              
-- your code is not a scratch pad. you may not put many comment blocks. you only add comment when it is absolutely needed. even then 2 line comment  
-is maximum
-- if you add comment, it does not have to be a complete full sentence. make it brief concise, as long as it conveys the meaning well
-- do not split your code lines into 80 col max, i dont like this style. 120-140 col is fine. i dont like wasting lines                                  
-- dont add __init__ when not needed. this is prone to circular import if you're careless                                                                
-- every parameter must be clearly typed                                                                                                                 
-- every func should have docstring following google style. 1-2 lines brief explanation in the beginning, followed by args, returns, exception, etc.     
-dont mention the type in explanation, the param type already explain that. no module level docstring, filename and structure should be clear enough
-- you can implement as if you're going to test later (TDD) but the tests implementation comes later because implementation will undergo some iterations
+# Style
+- Your code is NOT a scratch pad 
+  - Excessive comment blocks are strictly prohibited
+  - Only add comment when it is absolutely needed, even then 2-line comment is maximum
+- If you add comment, make it brief, concise, as long as it conveys the meaning well
+  - It does not have to be a complete full sentence
+- Do not split your code lines into 80 col max, 120-140 col is fine
+  - When there are too many params in functions, if it exceeds the 140 col, use trailing commas and make each param consumes one line
+  - Same case for when calling the function 
+
+## Python-specific
+- When writing strings, 
+  - In case of multi-lines, use triple-quotes
+  - In case of a long one-line strings, do NOT split into multilines using string literal concatenation
+- Don't add __init__ in a module when not needed, this is prone to circular import
+- Every parameter must be clearly typed
+- No module-level docstring, filename and structure should be clear enough
+- Every func must have docstring following google style 
+  - 1-2 lines brief explanation in the beginning, followed by args, returns, exception, etc.     
+  - Don't mention the type in args explanation, the param type already explain that
