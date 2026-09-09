@@ -11,13 +11,28 @@ This skill describes coding rules and instructions that you must follow. However
   - When you have multiple alternatives of implementing something, default to the simplest one unless you have a good reason not to
   - In such case, prompt the user to check first before proceeding                                                                                                            
 - As modular as needed, emphasize on needed
-  - Don't implement very specific algorithm to support just one edge case, it will break on others
+  - Do not implement very specific algorithm to support just one edge case, it will break on others
   - Group related functions into one module, otherwise split into different files
 - Never duplicate codes
   - Before implementing something new, check if the feature already exists and reuse it
   - If something similar but not exactly the same exists, check if it's worth to refactor the implementation to support all at once
+
+
+# Testing
 - Test implementation comes later during refining
   - Initial implementation requires iteration with user which will break tests if you implement to early, wasting time
+  - However, you may test your code in a temporary scratchpad to confirm your implementation if needed
+- Test code coverage is NOT a priority
+  - Do not add trivial tests just to make the test suite cover all lines of code
+  - Test the actual use cases of the features and the edge cases
+  - Quality over quantity
+
+# Project Configuration
+Utilize CLI as much as possible, do not edit project configuration and dependencies on your own unless it is necessary. 
+
+Examples:
+- Use `uv init` to instantiate project, don't write the `pyproject.toml` manually
+- Use `uv add` to add new dependencies, don't manually edit the `pyproject.toml` to add new library. You do NOT know the latest version
 
 # Style
 - Your code is NOT a scratch pad 
@@ -28,7 +43,7 @@ This skill describes coding rules and instructions that you must follow. However
 - Do not split your code lines into 80 col max, 120-140 col is fine
   - When there are too many params in functions, if it exceeds the 140 col, use trailing commas and make each param consumes one line
   - Same case for when calling the function 
-- Add single blank line to indicate sections within a code
+- Add single blank line to indicate sections within a code, increasing readability
 
 Bad example:
 ```python
@@ -43,7 +58,15 @@ def quicksort(arr):
 ```
 Good example:
 ```python
-def quicksort(arr):
+def quicksort(arr: list[int]) -> list:
+    """
+    Sort a list of integers ascending using quick sort
+
+    Args:
+        arr: list of integers
+    Returns:
+        Sorted list in ascending order
+    """
     if len(arr) <= 1:
         return arr
 
@@ -59,16 +82,10 @@ def quicksort(arr):
 - When writing strings, 
   - In case of multi-lines, use triple-quotes
   - In case of a long one-line strings, do NOT split into multilines using string literal concatenation
-- Don't add __init__ in a module when not needed, this is prone to circular import
+- Don't add `__init__` in a module when not needed, this is prone to circular import
 - Every parameter must be clearly typed
 - No module-level docstring, filename and structure should be clear enough
 - Every func must have docstring following google style 
   - 1-2 lines brief explanation in the beginning, followed by args, returns, exception, etc.     
   - Don't mention the type in args explanation, the param type already explain that
 
-## Project configuration
-Utilize CLI as much as possible, do not edit project configuration and dependencies on your own unless it is necessary. 
-
-Examples:
-- Use `uv init` to instantiate project, don't write the `pyproject.toml` manually
-- Use `uv add` to add new dependencies, don't manually edit the `pyproject.toml` to add new library. You do NOT know the latest version
