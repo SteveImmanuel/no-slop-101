@@ -88,4 +88,5 @@ def quicksort(arr: list[int]) -> list:
 - Every func must have docstring following google style 
   - 1-2 lines brief explanation in the beginning, followed by args, returns, exception, etc.     
   - Don't mention the type in args explanation, the param type already explain that
+- Each entry in `__all__` inside `__init__` must go on its own line, even if the whole list fit within 140 col
 
